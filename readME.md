@@ -21,7 +21,7 @@ This project analyzes the CORD-19 research dataset to explore trends in COVID-19
 
 1. Clone this repository:
 ```bash
-git clone [your-repo-url]
+git clone [https://github.com/Kim-dr/frameworks_Assignment.git]
 cd Frameworks_Assignment
 ```
 
@@ -86,4 +86,5 @@ Frameworks_Assignment/
 [Kimberly Kagasi]
 
 ## License
+
 This project is for educational purposes.
