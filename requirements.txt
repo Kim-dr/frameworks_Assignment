@@ -1,0 +1,6 @@
+**Python 3.13.5**
+- **Pandas**: Data manipulation and analysis
+- **Matplotlib/Seaborn**: Data visualization
+- **Streamlit**: Web application framework
+- **WordCloud**: Text visualization
+- **Jupyter**: Interactive development
