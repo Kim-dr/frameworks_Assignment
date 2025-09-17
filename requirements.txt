@@ -1,9 +1,7 @@
 
-- Pandas: Data manipulation and analysis
-- Matplotlib
-- Seaborn: Data visualization
-- Streamlit: Web application framework
-- WordCloud: Text visualization
-
-- Jupyter: Interactive development
-
+pandas
+matplotlib
+seaborn
+streamlit
+wordcloud
+jupyter
