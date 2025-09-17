@@ -3,6 +3,8 @@
 ## Overview
 This project analyzes the CORD-19 research dataset to explore trends in COVID-19 research publications. It includes data exploration, visualization, and an interactive Streamlit web application.
 
+## Deployment link 🔗
+View the website live on streamlit through this link : https://frameworksassignment-dwzlm4fdp6eijwdpfk3j56.streamlit.app/
 ## Dataset
 - **Source**: CORD-19 Research Challenge from Kaggle
 - **File used**: metadata.csv
@@ -88,3 +90,4 @@ Frameworks_Assignment/
 ## License
 
 This project is for educational purposes.
+
