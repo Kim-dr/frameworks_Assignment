@@ -14,13 +14,19 @@ st.set_page_config(
 )
 
 # Cache data loading
+# Cache data loading
 @st.cache_data
 def load_data(sample_size=50000):
     """Load and clean the CORD-19 metadata in a memory-efficient way"""
-
-    # Load only needed columns
+    
     use_cols = ['title', 'publish_time', 'journal', 'authors']
-    df = pd.read_csv('metadata.csv', usecols=use_cols, low_memory=True)
+
+    try:
+        # Try to load the full dataset (local machine only)
+        df = pd.read_csv('metadata.csv', usecols=use_cols, low_memory=True)
+    except FileNotFoundError:
+        # Fallback to the smaller sample dataset (on Streamlit Cloud)
+        df = pd.read_csv('metadata_sample.csv', usecols=use_cols, low_memory=True)
 
     # Drop missing critical values
     df = df.dropna(subset=['title', 'publish_time'])
@@ -28,7 +34,7 @@ def load_data(sample_size=50000):
     # Convert dates
     df['publish_time'] = pd.to_datetime(df['publish_time'], errors='coerce')
     df = df.dropna(subset=['publish_time'])
-    df['year'] = df['publish_time'].dt.year.astype('int16')  # smaller dtype
+    df['year'] = df['publish_time'].dt.year.astype('int16')
 
     # Filter for COVID-19 era
     df = df[(df['year'] >= 2019) & (df['year'] <= 2023)]
@@ -44,6 +50,7 @@ def load_data(sample_size=50000):
         df = df.sample(sample_size, random_state=42)
 
     return df
+
 
 
 # Load data
